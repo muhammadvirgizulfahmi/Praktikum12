@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="background-color: aliceblue;width:30%">
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>
+                        Masukkan Nilai
+                    </th>
+                    <th>
+                        Valas
+                    </th>
+                    <th>
+                        Nilai Rupiah
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" id="angka" onchange="hitung()">
+                    </td>
+                    <td>
+                        <select name="" id="select" onchange="hitung()">
+                            <option value="us">Dollar US</option>
+                            <option value="sg">Dollar Singapore</option>
+                            <option value="mlys">Ringgit Malaysia</option>
+                            <option value="jpg">Yen Jepang</option>
+                            <option value="euro">Euro</option>
+                            <option value="arab">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" id="hasil" readonly>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </fieldset>
+
+    <script>
+        function hitung(){
+            let angka = Number(document.getElementById("angka").value);
+            let pilih = document.getElementById("select").value;
+            let hasil = document.getElementById("hasil");
+            if (pilih == "us"){
+                let hitung = angka * 15502.15;
+                hasil.value = hitung.toLocaleString()
+            }
+            else if (pilih == "sg"){
+                let hitung = angka * 11634.65;
+                hasil.value = hitung.toLocaleString()
+            }
+            else if (pilih == "mlys"){
+                let hitung = angka * 3316.97;
+                hasil.value = hitung.toLocaleString()
+            }
+            else if (pilih == "jpg"){
+                let hitung = angka * 107.50;
+                hasil.value = hitung.toLocaleString()
+            }
+            else if (pilih == "euro"){
+                let hitung = angka * 16971.50;
+                hasil.value = hitung.toLocaleString()
+            }
+            else {
+                let hitung = angka * 4122.74;
+                hasil.value = hitung.toLocaleString()
+            }
+        }
+    </script>
+</body>
+</html>
